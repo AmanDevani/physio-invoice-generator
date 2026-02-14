@@ -1,0 +1,55 @@
+stages:
+  - sync
+
+.deploy_template:
+  stage: deploy
+  image: node:22
+  before_script:
+    - npm ci
+
+sync_to_github:
+  stage: sync
+  image: alpine:latest
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+  script:
+    - echo "Starting synchronization with GitHub..."
+    - apk add --no-cache git openssh-client
+    - git remote add github https://oauth2:$GITHUB_TOKEN@github.com/$GITHUB_ORG_NAME/$GITHUB_REPO_NAME.git
+    - git push github --all
+    - git push github --tags
+
+# deploy:dev:
+#   extends: .deploy_template
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "dev"'
+#   script:
+#     - echo "Deploying to Firebase (Dev)..."
+#     - npm install -g firebase-tools
+#     - cp "$DEV_ENV" .env
+#     - npm run build
+#     - firebase deploy --project $(grep REACT_APP_FIREBASE_PROJECT_ID .env | cut -d '=' -f2) --token "$FIREBASE_TOKEN"
+
+# deploy:uat:
+#   extends: .deploy_template
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "uat"'
+#   script:
+#     - echo "Deploying to Vercel (UAT)..."
+#     - npm install -g vercel
+#     - cp "$UAT_ENV" .env
+#     - npm run build
+#     - vercel deploy --prod --token=$VERCEL_TOKEN --org=$VERCEL_ORG_ID --project=$VERCEL_PROJECT_ID_UAT --confirm
+
+# deploy:prod:
+#   extends: .deploy_template
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH == "main"'
+#       when: manual
+#   script:
+#     - echo "Deploying to Vercel (Production)..."
+#     - npm install -g vercel
+#     - cp "$PROD_ENV" .env
+#     - npm run build
+#     - vercel deploy --prod --token=$VERCEL_TOKEN --org=$VERCEL_ORG_ID --project=$VERCEL_PROJECT_ID_PROD --confirm
