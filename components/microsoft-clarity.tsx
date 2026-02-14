@@ -10,7 +10,12 @@ const MicrosoftClarity = () => {
     console.log(clarityEnv)
     if (!clarityEnv) return;
 
-    Clarity?.init(clarityEnv);
+    try{
+      console.log('Initializing',clarityEnv)
+      Clarity?.init(clarityEnv);
+    } catch(err) {
+      console.error(err)
+    }
   }, []);
 
   return null;
