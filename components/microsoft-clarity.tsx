@@ -7,6 +7,7 @@ const clarityEnv = process.env.NEXT_PUBLIC_CLARITY_API_KEY;
 
 const MicrosoftClarity = () => {
   useEffect(() => {
+    console.log(clarityEnv)
     if (!clarityEnv) return;
 
     Clarity?.init(clarityEnv);
