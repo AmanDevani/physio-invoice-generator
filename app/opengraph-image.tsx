@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "PhysioInvoice - Practice Management";
+export const alt = "PhysioInvoice - Invoice Management";
 export const size = {
   width: 1200,
   height: 630,
@@ -81,7 +81,7 @@ export default async function Image() {
                 fontWeight: 500,
               }}
             >
-              Practice Management
+              Invoice Management
             </span>
           </div>
         </div>
