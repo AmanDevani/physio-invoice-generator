@@ -11,7 +11,19 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "PhysioInvoice - Practice Management",
   description: "Professional physiotherapy invoice management system",
-  generator: "v0.app",
+  icons: {
+    icon: "/icon.svg",
+  },
+  openGraph: {
+    title: "PhysioInvoice - Practice Management",
+    description: "Professional physiotherapy invoice management system",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PhysioInvoice - Practice Management",
+    description: "Professional physiotherapy invoice management system",
+  },
 };
 
 export default function RootLayout({

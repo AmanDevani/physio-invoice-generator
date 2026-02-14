@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Activity, Menu, Bug } from "lucide-react";
+import Image from "next/image";
+import { Menu, Bug } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -35,8 +36,14 @@ export function DashboardHeader({
         <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary text-primary-foreground">
-                <Activity className="h-5 w-5 sm:h-6 sm:w-6" />
+              <div className="flex items-center justify-center h-8 w-8 sm:h-10 sm:w-10 rounded-xl overflow-hidden flex-shrink-0 bg-[#166534]">
+                <Image
+                  src="/icon.svg"
+                  alt="PhysioInvoice"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-contain p-1"
+                />
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl font-bold tracking-tight">
