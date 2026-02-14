@@ -1,0 +1,23 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #166534; }
+      .wave { stroke: #ffffff; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #166534; }
+      .wave { stroke: #ffffff; }
+    }
+  </style>
+  <!-- Squircle (rounded square) - forest/emerald green -->
+  <rect class="bg" width="180" height="180" rx="40" />
+  <!-- ECG / heartbeat waveform - white, centered -->
+  <path
+    class="wave"
+    d="M40 95 L55 95 L62 78 L72 95 L78 95 L85 62 L98 118 L108 95 L122 95 L128 82 L138 95 L155 95"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
