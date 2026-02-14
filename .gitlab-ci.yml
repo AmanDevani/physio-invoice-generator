@@ -14,7 +14,7 @@ sync_to_github:
   script:
     - echo "Starting synchronization with GitHub..."
     - apk add --no-cache git openssh-client
-    - git remote add github https://oauth2:$GITHUB_TOKEN@github.com/$GITHUB_ORG_NAME/$GITHUB_REPO_NAME.git
+    - git remote add github https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_ORG_NAME/$GITHUB_REPO_NAME.git
     - git push github --all
     - git push github --tags
 
