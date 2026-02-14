@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { AppProvider } from "@/contexts/app-context";
+import MicrosoftClarity from "@/components/microsoft-clarity";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -37,6 +38,7 @@ export default function RootLayout({
         <AppProvider>
           {children}
           <Toaster />
+          <MicrosoftClarity />
         </AppProvider>
       </body>
     </html>
