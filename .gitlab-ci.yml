@@ -11,6 +11,8 @@ sync_to_github:
   stage: sync
   image: alpine:latest
   when: manual
+  variables:
+    GIT_DEPTH: 0
   script:
     - echo "Starting synchronization with GitHub..."
     - apk add --no-cache git openssh-client
