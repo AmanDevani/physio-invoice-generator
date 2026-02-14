@@ -10,9 +10,7 @@ stages:
 sync_to_github:
   stage: sync
   image: alpine:latest
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-      when: manual
+  when: manual
   script:
     - echo "Starting synchronization with GitHub..."
     - apk add --no-cache git openssh-client
