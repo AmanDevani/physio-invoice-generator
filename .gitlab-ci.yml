@@ -10,15 +10,13 @@ stages:
 sync_to_github:
   stage: sync
   image: alpine:latest
-  when: manual
   variables:
     GIT_DEPTH: 0
   script:
     - echo "Starting synchronization with GitHub..."
     - apk add --no-cache git openssh-client
     - git remote add github https://$GITHUB_USERNAME:$GITHUB_TOKEN@github.com/$GITHUB_ORG_NAME/$GITHUB_REPO_NAME.git
-    - git fetch --all --tags
-    - git push --mirror github
+    - git push github "${CI_COMMIT_REF_NAME}"
 
 
 # deploy:dev:
