@@ -43,6 +43,7 @@ export function DashboardHeader({
                   width={40}
                   height={40}
                   className="h-full w-full object-contain p-1"
+                  priority
                 />
               </div>
               <div>
@@ -50,7 +51,7 @@ export function DashboardHeader({
                   PhysioInvoice
                 </h1>
                 <p className="text-xs sm:text-sm text-muted-foreground hidden xs:block">
-                  Practice Management
+                  Invoice Management
                 </p>
               </div>
             </div>
