@@ -12,54 +12,77 @@ export default async function Image() {
     (
       <div
         style={{
-          fontSize: 48,
-          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
-          fontFamily: "system-ui, sans-serif",
+          background: "#ffffff",
+          fontFamily: "system-ui, serif",
         }}
       >
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
-            gap: 16,
+            gap: 32,
           }}
         >
+          {/* Green squircle with ECG waveform (matching logo) */}
           <div
             style={{
-              fontSize: 72,
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
+              width: 160,
+              height: 160,
+              borderRadius: 36,
+              background: "#166534",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            PhysioInvoice
+            <svg
+              width="100"
+              height="48"
+              viewBox="0 0 120 48"
+              fill="none"
+              style={{ margin: "0 auto" }}
+            >
+              <path
+                d="M8 28 L20 28 L26 14 L34 28 L40 28 L48 6 L58 42 L66 28 L78 28 L84 18 L92 28 L108 28"
+                stroke="white"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
           </div>
           <div
             style={{
-              fontSize: 28,
-              color: "#94a3b8",
-              fontWeight: 500,
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
             }}
           >
-            Practice Management
-          </div>
-          <div
-            style={{
-              marginTop: 24,
-              padding: "12px 24px",
-              background: "rgba(255,255,255,0.1)",
-              borderRadius: 8,
-              fontSize: 20,
-            }}
-          >
-            Professional physiotherapy invoice management
+            <span
+              style={{
+                fontSize: 64,
+                fontWeight: 700,
+                color: "#171717",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              PhysioInvoice
+            </span>
+            <span
+              style={{
+                fontSize: 26,
+                color: "#525252",
+                fontWeight: 500,
+              }}
+            >
+              Practice Management
+            </span>
           </div>
         </div>
       </div>
